@@ -1,9 +1,11 @@
 /* eslint-disable no-unused-vars */
 
-import { useRecoilState } from 'recoil';
-import { typeState, carpetSizeState, totalFloorState, floorState, facingState, ageState, bedroomState, bathroomsState, balconyState, tenantState, availabilityState, descState, facilityState } from './../atom';
+import { useRecoilState, useSetRecoilState } from 'recoil';
+import { typeState, carpetSizeState, totalFloorState, floorState, facingState, ageState, bedroomState, bathroomsState, balconyState, tenantState, availabilityState, descState, facilityState, spaceState, rentSaleState } from './../atom';
+import { useState } from 'react';
 const PropertyDetail = () => {
     const [type, setType] = useRecoilState(typeState)
+    const [sale, setSale] = useRecoilState(rentSaleState)
     const [carpetSize, setCarpetSize] = useRecoilState(carpetSizeState)
     const [totalFloor, setTotalFloor] = useRecoilState(totalFloorState)
     const [floor, setFloor] = useRecoilState(floorState)
@@ -15,6 +17,7 @@ const PropertyDetail = () => {
     const [tenant, setTenant] = useRecoilState(tenantState)
     const [avail, setAvail] = useRecoilState(availabilityState)
     const [des, setDes] = useRecoilState(descState)
+    const [space, setSpace] = useRecoilState(spaceState)
 
     return (
         <div>
@@ -27,11 +30,11 @@ const PropertyDetail = () => {
                         </label>
                         <div className="grid grid-cols-1 gap-2 sm:grid-cols-3 sm:gap-4">
                             <label className="flex items-center">
-                                <input type="radio" name="userType" value="owner" className="form-radio" required />
+                                <input onClick={() => setSale("Rent")} type="radio" name="userType" value="owner" className="form-radio" required />
                                 <span className="ml-2">Rent</span>
                             </label>
                             <label className="flex items-center">
-                                <input type="radio" name="userType" value="builder" className="form-radio" required />
+                                <input onClick={() => setSale("Sale")} type="radio" name="userType" value="builder" className="form-radio" required />
                                 <span className="ml-2">Sale</span>
                             </label>
                         </div>
@@ -42,20 +45,112 @@ const PropertyDetail = () => {
                             Property type <span className="text-red-500">*</span>
                         </label>
                         <div className="grid grid-cols-1 gap-2 sm:grid-cols-3 sm:gap-4">
-                            <label className="flex items-center">
-                                <input onChange={(e) => setType(e.target.value)} type="radio" name="propType" value="Residential" className="form-radio" required />
-                                <span className="ml-2">Residential</span>
-                            </label>
-                            <label className="flex items-center">
-                                <input onChange={(e) => setType(e.target.value)} type="radio" name="propType" value="Commercial" className="form-radio" required />
-                                <span className="ml-2">Commercial</span>
-                            </label>
-                            <label className="flex items-center">
-                                <input onChange={(e) => setType(e.target.value)} type="radio" name="propType" value="Land / Plot" className="form-radio" required />
-                                <span className="ml-2">Land / Plot</span>
-                            </label>
+                            <div className="flex flex-col">
+                                <label className="flex items-center">
+                                    <input
+                                        onChange={(e) => { setType(e.target.value) }}
+                                        type="radio"
+                                        name="propType"
+                                        value="Residential"
+                                        className="form-radio"
+                                        required
+                                    />
+                                    <span className="ml-2">Residential</span>
+                                </label>
+                            </div>
+                            <div className="flex flex-col">
+                                <label className="flex items-center">
+                                    <input
+                                        onChange={(e) => setType(e.target.value)}
+                                        type="radio"
+                                        name="propType"
+                                        value="Commercial"
+                                        className="form-radio"
+                                        required
+                                    />
+                                    <span className="ml-2">Commercial</span>
+                                </label>
+                            </div>
+                            <div className="flex flex-col">
+                                <label className="flex items-center">
+                                    <input
+                                        onChange={(e) => setType(e.target.value)}
+                                        type="radio"
+                                        name="propType"
+                                        value="Land / Plot"
+                                        className="form-radio"
+                                        required
+                                    />
+                                    <span className="ml-2">Land / Plot</span>
+                                </label>
+                            </div>
                         </div>
+                        {type === 'Residential' && (
+                            <div className="mt-4 grid grid-cols-1 md:grid-cols-3 xl:grid-cols-6 gap-3">
+                                <p
+                                    onClick={() => setSpace("Flat/Apartment")}
+                                    className={`flex justify-center cursor-pointer hover:bg-gray-200 border border-1 p-2 rounded-full ${space === "Flat/Apartment" ? "bg-gray-200" : ""}`}
+                                >
+                                    Flat/Apartment
+                                </p>
+                                <p
+                                    onClick={() => setSpace("House/Villa")}
+                                    className={`flex justify-center cursor-pointer hover:bg-gray-200 border border-1 p-2 rounded-full ${space === "House/Villa" ? "bg-gray-200" : ""}`}
+                                >
+                                    House/Villa
+                                </p>
+                            </div>
+                        )}
+                        {type === 'Commercial' && (
+                            <div className="mt-4 grid md:grid-cols-2 xl:grid-cols-4 gap-3">
+                                <p
+                                    onClick={() => setSpace("Office Space")}
+                                    className={`flex justify-center cursor-pointer hover:bg-gray-200 border border-1 p-2 px-6 rounded-full ${space === "Office Space" ? "bg-gray-200" : ""}`}
+                                >
+                                    Office Space
+                                </p>
+                                <p
+                                    onClick={() => setSpace("Co Working")}
+                                    className={`flex justify-center cursor-pointer hover:bg-gray-200 border border-1 p-2 px-6 rounded-full ${space === "Co Working" ? "bg-gray-200" : ""}`}
+                                >
+                                    Co Working
+                                </p>
+                                <p
+                                    onClick={() => setSpace("Restaurant/Cafe")}
+                                    className={`flex justify-center cursor-pointer hover:bg-gray-200 border border-1 p-2 px-6 rounded-full ${space === "Restaurant/Cafe" ? "bg-gray-200" : ""}`}
+                                >
+                                    Restaurant/Cafe
+                                </p>
+                                <p
+                                    onClick={() => setSpace("Shop/Showroom")}
+                                    className={`flex justify-center cursor-pointer hover:bg-gray-200 border border-1 p-2 px-6 rounded-full ${space === "Shop/Showroom" ? "bg-gray-200" : ""}`}
+                                >
+                                    Shop/Showroom
+                                </p>
+                                <p
+                                    onClick={() => setSpace("Industrial Building")}
+                                    className={`flex justify-center cursor-pointer hover:bg-gray-200 border border-1 p-2 px-6 rounded-full ${space === "Industrial Building" ? "bg-gray-200" : ""}`}
+                                >
+                                    Industrial Building
+                                </p>
+                                <p
+                                    onClick={() => setSpace("Industrial Shed")}
+                                    className={`flex justify-center cursor-pointer hover:bg-gray-200 border border-1 p-2 px-6 rounded-full ${space === "Industrial Shed" ? "bg-gray-200" : ""}`}
+                                >
+                                    Industrial Shed
+                                </p>
+                                <p
+                                    onClick={() => setSpace("Warehouse/Godown")}
+                                    className={`flex justify-center cursor-pointer hover:bg-gray-200 border border-1 p-2 px-6 rounded-full ${space === "Warehouse/Godown" ? "bg-gray-200" : ""}`}
+                                >
+                                    Warehouse/Godown
+                                </p>
+                            </div>
+                        )}
+
                     </div>
+
+
 
                     <div className="text-sm lg:text-[16px] grid grid-cols-1 sm:grid-cols-2 gap-4 p-5">
                         <div className="w-full">
@@ -68,7 +163,7 @@ const PropertyDetail = () => {
                                 </label>
                             </div>
                         </div>
-                        <div className="w-full">
+                        <div className="w-fullonClick={(e) => setSpace()} ">
                             <label className="block text-md font-medium mb-1">
                                 Carpet Area <span className="text-red-500">*</span>
                             </label>
@@ -392,7 +487,7 @@ const PropertyDetail = () => {
                             <textarea onChange={(e) => setDes(e.target.value)} className="border border-1 bg-white shadow shadow-sm mb-4 w-full text-gray-700 p-4 focus:outline-none" placeholder="Add a description for your property to atrract best tenant" aria-label="Message" />
                         </div>
                     </div>
-                    
+
                 </form>
             </div>
         </div>

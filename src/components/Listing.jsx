@@ -157,10 +157,10 @@ const Listing = () => {
                         {current === 4 ? <PropertyImages setFlag={setFlag} /> : <></>}
                     </div>
 
-                    <div className="text-gray-100 bg-[#122B49] text-xs sm:text-sm px-4 py-1 md:px-6 lg:text-[17px] flex justify-between items-center rounded-b-lg">
+                    <div className="text-gray-100 bg-[#122B49] text-xs sm:text-sm px-4 py-1 md:px-6 md:py-3 flex justify-between items-center rounded-b-lg">
                         <span>Need Help? <a href="tel:9999999999" className="font-semibold">Call 9999999999</a></span>
                         <button
-                            className={`bg-[#1e324a] text-white px-4 py-1 md:px-8 md:py-2 rounded ${current === 5 ? 'border border-1-white' : ''}`}
+                            className={`bg-[#1e324a] text-white px-4 py-1 md:px-10 md:py-2 rounded-lg ${current === 5 ? 'border border-1-white' : ''}`}
                             onClick={current !== 4 ? handleClick : handleSubmit}
                         >
                             {current !== 4 ? 'NEXT' : 'SAVE & POST'}

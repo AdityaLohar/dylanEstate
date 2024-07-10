@@ -7,7 +7,7 @@ const PreviewInquiry = () => {
     const deposit = useRecoilValue(depositState)
 
     return (
-        <div className="max-w-md mx-auto mt-28 mb-5">
+        <div className="max-w-md mx-auto mt-3 md:mt-20 lg:mt-28 mb-5">
             <div className='bg-[#f6efe6] flex text-gray-800 justify-around mb-5'>
                 <div className="px-6 py-4 flex flex-col text-center">
                     <div className="font-bold mb-2 text-lg md:text-xl">₹ {rent} / Month</div>

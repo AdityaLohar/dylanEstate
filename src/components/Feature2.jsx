@@ -9,7 +9,7 @@ const Feature2 = () => {
     return (
         <div>
             <div className="p-5 my-3">
-                <label className="block text-sm lg:text-[15px] font-medium mb-1">
+                <label className="block text-sm lg:text-[15px] font-semibold mb-1">
                     Furnishing <span className="text-red-500">*</span>
                 </label>
                 <div className="grid grid-cols-1 gap-2 md:gap-4 md:grid-cols-3">
@@ -31,7 +31,7 @@ const Feature2 = () => {
             <hr />
 
             <div className="p-5 my-3">
-                <label className="block text-sm lg:text-[15px] font-medium mb-1">
+                <label className="block text-sm lg:text-[15px] font-semibold mb-1">
                     Additional Features
                 </label>
                 <div className="grid grid-cols-2 gap-2 md:gap-4 sm:grid-cols-3">
@@ -65,7 +65,7 @@ const Feature2 = () => {
             <hr />
 
             <div className="p-5 my-3">
-                <label className="block text-sm lg:text-[15px] font-medium mb-1">
+                <label className="block text-sm lg:text-[15px] font-semibold mb-1">
                     Tiles
                 </label>
                 <div className="grid grid-cols-1 gap-2 md:gap-4 md:grid-cols-3">
@@ -87,7 +87,7 @@ const Feature2 = () => {
             <hr />
 
             <div className="p-5 my-3">
-                <label className="block text-sm lg:text-[15px] font-medium mb-1">
+                <label className="block text-sm lg:text-[15px] font-semibold mb-1">
                     Safety <span className="text-red-500">*</span>
                 </label>
                 <div className="grid grid-cols-1 gap-2 md:gap-4 md:grid-cols-3">

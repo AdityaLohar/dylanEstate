@@ -30,8 +30,8 @@ const PropertyImages = ({ setFlag }) => {
             </div>
 
             <div className={`flex flex-col items-center sm:items-start w-full border border-1 ${selectedImage ? 'h-auto' : 'h-64'} justify-center`}>
-                <label className="bg-blue-500 text-white py-2 px-4 rounded cursor-pointer m-auto">
-                    Add photo now
+                <label className="bg-[#122B49] text-white py-2 px-4 rounded cursor-pointer m-auto">
+                + Add photo now
                     <input type="file" className="hidden" onChange={handleFileChange} />
                 </label>
                 {selectedImage && (

@@ -5,7 +5,6 @@ import { useNavigate } from 'react-router-dom';
 const countries = [
     "United States", "Canada", "Mexico", "United Kingdom", "Australia",
     "India", "China", "Japan", "Germany", "France", "Italy", "Spain",
-    // Add more countries as needed
 ];
 
 const InputContainer = () => {
@@ -42,17 +41,22 @@ const InputContainer = () => {
                 setShowOTPInput(true);
             }
         } else {
+            console.log(formData.userType)
+            console.log(formData.name)
+            console.log(formData.country)
+            console.log(formData.phone)
+            console.log(formData.email)
             alert('Please fill in all required fields.');
         }
     };
 
     return (
         <div className="bg-white rounded-lg w-full lg:w-3/4 h-auto lg:h-96 flex flex-col">
-            <h2 className="px-5 py-3 xl:px-10 text-lg xl:text-xl font-semibold bg-gray-100 text-[#122B49] sticky rounded-t-lg">LETS GET YOU STARTED !</h2>
+            <h2 className="px-5 py-4 xl:px-10 text-lg xl:text-xl font-semibold bg-[#FCF8F4] text-[#122B49] sticky rounded-t-lg">LETS GET YOU STARTED !</h2>
             <div className="overflow-y-auto flex-grow xl:p-5">
                 {!showOTPInput ?
                     (
-                        <form className="space-y-4 text-sm md:text-sm bg-white text-black">
+                        <form className="space-y-4 text-sm md:text-[17px] bg-white text-black">
                             <div className="p-5">
                                 <label className="block font-medium mb-1">
                                     I am <span className="text-red-500">*</span>
@@ -103,13 +107,20 @@ const InputContainer = () => {
                                 <label className="block font-medium mb-1">
                                     Phone <span className="text-red-500">*</span>
                                 </label>
-                                <input type="text" name="phone" className="w-full p-2 border border-gray-300 rounded bg-white text-black" onChange={handleInputChange} required />
+                                <input type="text" name="phone" className="w-full p-2 border border-gray-300 rounded bg-white text-black" placeholder='000-000-0000' onChange={handleInputChange}
+                                    required
+                                />
+                            </div>
+                            <div className="px-5">
+                                OR
                             </div>
                             <div className="p-5">
                                 <label className="block font-medium mb-1">
                                     Email <span className="text-red-500">*</span>
                                 </label>
-                                <input type="email" name="email" placeholder="example@example.com" className="w-full p-2 border border-gray-300 rounded bg-white text-black" onChange={handleInputChange} required />
+                                <input type="email" name="email" placeholder="example@example.com" className="w-full p-2 border border-gray-300 rounded bg-white text-black" onChange={handleInputChange}
+                                    required
+                                />
                             </div>
                         </form>
 
@@ -119,7 +130,7 @@ const InputContainer = () => {
                                 <p className="block text-gray-800 font-medium">Enter OTP sent on {formData.phone} <span className="text-red-500">*</span> </p>
                                 <p className='text-sm text-[#122B49] underline'>Change</p>
                             </div>
-                            <input onChange={(e) => setOtp(e.target.value)} type="number" className="w-full p-2 border border-gray-300 rounded bg-white text-black mb-4" placeholder="Enter OTP" required />
+                            <input onChange={(e) => setOtp(e.target.value)} type="number" className="w-full p-2 border border-gray-300 rounded bg-white text-black mb-4" placeholder="0 0 0 0 0" required />
                             <div className='flex justify-end w-full'>
                                 <button className="text-sm text-[#122B49] py-2 items-end">Resend OTP</button>
                             </div>
@@ -128,9 +139,9 @@ const InputContainer = () => {
                 }
             </div>
 
-            <div className="text-sm xl:text-[16px] bg-gray-100 text-[#122B49] p-4 flex justify-between items-center rounded-b-lg">
+            <div className="text-sm xl:text-[13px] bg-gray-100 text-[#122B49] p-4 flex justify-between items-center rounded-b-lg">
                 <span>Need Help? <a href="tel:9999999999" className="text-[#122B49] font-semibold">Call 9999999999</a></span>
-                <button className="bg-[#122B49] text-white px-8 py-2 rounded" onClick={handleNextClick}>NEXT</button>
+                <button className="bg-[#122B49] xl:text-[15px] text-white px-8 py-2 rounded-lg" onClick={handleNextClick}>NEXT</button>
             </div>
         </div>
     );

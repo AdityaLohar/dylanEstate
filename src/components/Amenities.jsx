@@ -28,12 +28,13 @@ const Amenities = () => {
     ];
 
     const facilities = useRecoilValue(amenitiesState)
+    const filteredAmenities = amenities.filter(amenity => facilities.includes(amenity.name));
 
     return (
         <div className="p-4 shadow rounded">
             <h2 className="text-xl md:text-2xl font-bold mb-4 p-4">Amenities</h2>
             <div className="grid grid-cols-2 gap-4 md:grid-cols-4 md:p-4">
-                {amenities.map((amenity, index) => (
+                {filteredAmenities.map((amenity, index) => (
                     <label key={index} className="flex items-center flex-col my-3">
                         <FontAwesomeIcon icon={amenity.icon} className="mb-2 h-6 w-6" />
                         <span className="ml-2 mb-2 text-xs text-gray-400 sm:text-md">{amenity.name}</span>

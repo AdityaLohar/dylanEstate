@@ -40,8 +40,8 @@ const Navbar = () => {
 
                 <div className={`flex-col lg:flex lg:flex-row ${windowWidth > 768 ? 'items-center' : 'items-start'} gap-2 sm:gap-3 space-y-4 md:space-y-0 lg:space-x-10 ${isOpen ? 'flex' : 'hidden'} lg:flex`}>
                     <a href="#properties" className="font-bold text-gray-900">PROPERTIES</a>
-                    <a href="#dashboard" className="font-bold text-gray-900">MY DASHBOARD/ACTIVITY</a>
-                    <a href="#list-property" className="font-bold text-gray-900">LIST YOUR PROPERTY</a>
+                    <a href="/dylanEstate/" className="font-bold text-gray-900">MY DASHBOARD/ACTIVITY</a>
+                    <a href="/dylanEstate/list" className="font-bold text-gray-900">LIST YOUR PROPERTY</a>
                     <a href="#contact" className="font-bold text-gray-900">CONTACT US</a>
                     <a href="#more" className="font-bold text-gray-900">MORE</a>
                     {windowWidth > 768 && <span className="border-l-2 border-gray-900 h-4"></span>}

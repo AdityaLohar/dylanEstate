@@ -25,8 +25,11 @@ const Feature1 = () => {
 
   return (
     <div>
+      <div className="p-5 block text-sm lg:text-[16px] font-semibold mb-1">
+        General Features
+      </div>
       <div className="p-5">
-        <label className="block text-sm lg:text-[15px] font-medium mb-1">
+        <label className="block text-sm lg:text-[15px] font-semibold mb-1">
           Non-Veg <span className="text-red-500">*</span>
         </label>
         <div className="grid grid-cols-1 gap-2 md:gap-4 md:grid-cols-3">
@@ -42,7 +45,7 @@ const Feature1 = () => {
       </div>
 
       <div className="p-5">
-        <label className="block text-sm lg:text-[15px] font-medium mb-1">
+        <label className="block text-sm lg:text-[15px] font-semibold mb-1">
           Pets Allowed <span className="text-red-500">*</span>
         </label>
         <div className="grid grid-cols-1 gap-2 md:gap-4 md:grid-cols-3">
@@ -58,7 +61,7 @@ const Feature1 = () => {
       </div>
 
       <div className="p-5">
-        <label className="block text-sm lg:text-[15px] font-medium mb-1">
+        <label className="block text-sm lg:text-[15px] font-semibold mb-1">
           Electricity <span className="text-red-500">*</span>
         </label>
         <div className="grid grid-cols-1 gap-2 md:gap-4 md:grid-cols-3">
@@ -74,7 +77,7 @@ const Feature1 = () => {
       </div>
 
       <div className="p-5">
-        <label className="block text-sm lg:text-[15px] font-medium mb-1">
+        <label className="block text-sm lg:text-[15px] font-semibold mb-1">
           Water Supply <span className="text-red-500">*</span>
         </label>
         <div className="grid grid-cols-1 gap-2 md:gap-4 md:grid-cols-3">

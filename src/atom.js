@@ -76,8 +76,18 @@ export const ageState = atom({
     default: "",
 });
 
+export const rentSaleState = atom({
+    key: 'rentSaleState',
+    default: "",
+});
+
 export const typeState = atom({
     key: 'typeState',
+    default: "",
+});
+
+export const spaceState = atom({
+    key: 'spaceState',
     default: "",
 });
 

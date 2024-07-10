@@ -1,12 +1,12 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faShieldAlt, faCamera, faCar, faParking, faWater, faPlug, faBolt, faUsers, faTree, faChild, faBicycle, faDumbbell, faHome, faShoppingCart, faSwimmer, faPhone, faFireExtinguisher, faBuilding } from '@fortawesome/free-solid-svg-icons';
+import { faShieldAlt, faCamera, faParking, faWater, faPlug, faBolt, faUsers, faTree, faChild, faBicycle, faDumbbell, faHome, faShoppingCart, faSwimmer, faPhone, faFireExtinguisher, faBuilding, faArrowUp } from '@fortawesome/free-solid-svg-icons';
 import { useSetRecoilState } from 'recoil';
 import { amenitiesState } from '../atom';
 
 const amenities = [
   { name: "24/7 Security", icon: faShieldAlt },
   { name: "CCTV Camera", icon: faCamera },
-  { name: "Lift", icon: faCar },
+  { name: "Lift", icon: faArrowUp },
   { name: "Reserved Parking", icon: faParking },
   { name: "Regular water supply", icon: faWater },
   { name: "Power Back up-Partial", icon: faPlug },
