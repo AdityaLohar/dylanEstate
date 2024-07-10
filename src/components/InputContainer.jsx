@@ -32,7 +32,7 @@ const InputContainer = () => {
         if (formData.userType && formData.name && formData.country && formData.phone && formData.email) {
             if (showOTPInput) {
                 if (otp.length >= 4) {
-                    navigate("/list")
+                    navigate("/dylanEstate/list")
                 }
                 else {
                     alert("Enter Otp")

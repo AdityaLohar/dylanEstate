@@ -7,11 +7,11 @@ const Thankyou = () => {
     
     const handleEdit = (e) => {
         e.preventDefault()
-        navigate("/list")
+        navigate("dylanEstate/list")
     }
     const handlePreview = (e) => {
         e.preventDefault()
-        navigate("/preview")
+        navigate("dylanEstate/preview")
     }
 
     return (
