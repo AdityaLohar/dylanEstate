@@ -71,17 +71,21 @@ const Listing = () => {
                 setFacility((facility) => [...facility, type])
 
                 setFlag(1)
+                return true
             } else {
                 setFlag(0)
+                return false
             }
         }
         else if (current === 1) {
             if (location === 1) {
                 setFlag(1)
+                return true
             }
         }
         else if (current === 2) {
             setFlag(1)
+            return true
         }
     };
 
@@ -93,9 +97,9 @@ const Listing = () => {
 
     const handleClick = (e) => {
         e.preventDefault()
-        validateFields()
+        const valid = validateFields()
 
-        if (flag) {
+        if (valid) {
             console.log(current)
             setFlag(0)
             setActiveOption((prev) => prev + 1)
