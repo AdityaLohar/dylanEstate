@@ -1,5 +1,3 @@
-'use client'
-
 import { useState } from 'react'
 import { Dialog } from '@headlessui/react'
 import { useNavigate } from 'react-router-dom'
