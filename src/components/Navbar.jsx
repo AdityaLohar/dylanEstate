@@ -50,6 +50,7 @@ const Navbar = () => {
                         <a href="#user" className="hover:text-gray-900"> <img src={frame1} className='w-4 h-4 md:w-5 md:h-5' alt="" /> </a>
                     </div>
                 </div>
+                
             </div>
 
         </nav>
