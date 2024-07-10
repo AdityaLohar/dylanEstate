@@ -23,7 +23,7 @@ const PreviewDetail = () => {
     const carpet = useRecoilValue(carpetSizeState)
 
     return (
-        <div className='text-gray-800 p-6 bg-white flex flex-col shadow-md rounded w-full mt-20 lg:mt-28 mx-auto h-fit'>
+        <div className='text-gray-800 p-6 bg-white flex flex-col shadow-md rounded w-full mt-20 lg:mt-22 mx-auto h-fit'>
             <div className='w-full flex justify-between items-start mb-4'>
                 <h2 className='text-md md:text-xl lg:text-2xl font-semibold text-center'>{bhk} {space} for {sale} in {building} ({carpet} Sq.ft) </h2>
             </div>

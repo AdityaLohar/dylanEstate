@@ -22,7 +22,7 @@ const Navbar = () => {
     }, []);
 
     return (
-        <nav className="text-xs xl:text-lg bg-white shadow-md p-1 flex justify-between px-3 lg:px-0 lg:justify-around items-center fixed top-0 left-0 w-full z-10 border-b border-gray-200">
+        <nav className="text-[13px] xl:text-[16px] bg-white shadow-md p-1 flex justify-between px-3 lg:px-0 lg:justify-around items-center fixed top-0 left-0 w-full z-10 border-b border-gray-200">
             <div className="flex flex-col items-start">
                 <img src={logo} alt="Logo" className="" />
                 <span className="text-lg font-semibold" style={{ color: '#B0854C' }}>Dylan Estate</span>
