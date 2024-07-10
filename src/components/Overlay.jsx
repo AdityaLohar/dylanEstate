@@ -10,7 +10,7 @@ const Overlay = ({ setOverlay }) => {
         <Dialog open={open} onClose={() => {
             setOpen(false)
             setOverlay(0)
-            navigate("dylanEstate/thankyou")
+            navigate("/dylanEstate/thankyou")
         }} className="relative z-10">
             <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
 
