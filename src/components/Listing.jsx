@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import ListingNav from './ListingNav';
 import PropertyDetail from './PropertyDetail';
 import { useRecoilState, useRecoilValue, useSetRecoilState } from 'recoil';
-import { ageState, availabilityState, balconyState, bathroomsState, bedroomState, carpetSizeState, descState, electricState, facilityState, facingState, floorState, furnishingState, nonVegState, petState, safeState, tenantState, totalFloorState, typeState, waterState } from '../atom';
+import { ageState, amenitiesState, availabilityState, balconyState, bathroomsState, bedroomState, carpetSizeState, descState, electricState, facilityState, facingState, floorState, furnishingState, nonVegState, petState, safeState, tenantState, totalFloorState, typeState, waterState } from '../atom';
 import { useNavigate } from 'react-router-dom';
 import LocationDetail from './LocationDetail';
 import Feature from './Feature';
@@ -35,14 +35,13 @@ const Listing = () => {
     const furnish = useRecoilValue(furnishingState)
     const safe = useRecoilValue(safeState)
 
-    const navigate = useNavigate()
-
+    const setFeatures = useSetRecoilState(amenitiesState);
     const [current, setCurrent] = useState(0)
     const setFacility = useSetRecoilState(facilityState)
     const facility = useRecoilValue(facilityState)
 
     const validateFields = () => {
-        if (!current) {
+        if (current === 0) {
             if (
                 type &&
                 carpetSize &&
@@ -58,6 +57,7 @@ const Listing = () => {
                 des
             ) {
                 setFacility([])
+                setFeatures([])
                 setFacility((facility) => [...facility, bhk])
                 setFacility((facility) => [...facility, bath])
                 setFacility((facility) => [...facility, carpetSize])
@@ -75,12 +75,12 @@ const Listing = () => {
                 setFlag(0)
             }
         }
-        else if (current == 1) {
+        else if (current === 1) {
             if (location === 1) {
                 setFlag(1)
             }
         }
-        else if (current == 2) {
+        else if (current === 2) {
             setFlag(1)
         }
     };

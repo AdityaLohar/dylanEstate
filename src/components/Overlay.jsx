@@ -8,9 +8,9 @@ const Overlay = ({ setOverlay }) => {
 
     return (
         <Dialog open={open} onClose={() => {
+            navigate("/dylanEstate/thankyou")
             setOpen(false)
             setOverlay(0)
-            navigate("/dylanEstate/thankyou")
         }} className="relative z-10">
             <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
 
@@ -31,7 +31,7 @@ const Overlay = ({ setOverlay }) => {
                                 onClick={() => {
                                     setOpen(false)
                                     setOverlay(0)
-                                    navigate("/thankyou")
+                                    navigate("/dylanEstate/thankyou")
                                 }}
                                 className="w-full justify-center rounded-md bg-[#122B49] px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-[#1A3874]"
                             >

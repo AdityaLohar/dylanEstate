@@ -7,11 +7,12 @@ const Thankyou = () => {
     
     const handleEdit = (e) => {
         e.preventDefault()
-        navigate("dylanEstate/list")
+        navigate("/dylanEstate/list")
     }
     const handlePreview = (e) => {
         e.preventDefault()
-        navigate("dylanEstate/preview")
+        console.log("in preview")
+        navigate("/dylanEstate/preview")
     }
 
     return (
