@@ -13,7 +13,12 @@ const PriceDetails = ({setFlag}) => {
 
     useEffect(() => {
         if (rent && deposit) {
-            if ((maintenanceOption === 'Extra Maintenance' && maintenance && time.length) || maintenanceOption !== 'Extra Maintenance') {
+            console.log(rent)
+            console.log(deposit)
+            console.log(maintenance)
+            console.log(time)
+            if ((maintenanceOption === 'Extra Maintenance' && maintenance && time) || maintenanceOption !== 'Extra Maintenance') {
+                // console.log("yaha")
                 setFlag(1)
             }
         }

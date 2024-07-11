@@ -84,8 +84,28 @@ const Listing = () => {
             }
         }
         else if (current === 2) {
-            setFlag(1)
-            return true
+            if (pet && veg && electric && water && furnish) {
+                setFacility((facility) => [...facility, pet])
+                setFacility((facility) => [...facility, veg])
+                setFacility((facility) => [...facility, electric])
+                setFacility((facility) => [...facility, water])
+                setFacility((facility) => [...facility, furnish])
+                setFlag(1)
+                return true
+            }
+            else {
+                alert("Enter all fields")
+            }
+        }
+        else if (current === 3) {
+            if (flag) {
+                return 1;
+            }
+        }
+        else if (current === 4) {
+            if (flag) {
+                return 1;
+            }
         }
     };
 
@@ -100,23 +120,20 @@ const Listing = () => {
         const valid = validateFields()
 
         if (valid) {
-            console.log(current)
+            console.log("isme")
             setFlag(0)
             setActiveOption((prev) => prev + 1)
             if (!f1) {
                 setF1(1)
                 setCurrent(1)
+                setFlag(0)
             }
             else if (!f2) {
                 setF2(1)
                 setCurrent(2)
+                setFlag(0)
             }
             else if (!f3) {
-                setFacility((facility) => [...facility, pet])
-                setFacility((facility) => [...facility, veg])
-                setFacility((facility) => [...facility, electric])
-                setFacility((facility) => [...facility, water])
-                setFacility((facility) => [...facility, furnish])
                 setF3(1)
                 setCurrent(3)
                 setFlag(0)
